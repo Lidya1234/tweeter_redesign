@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_12_19_113020) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "followings", force: :cascade do |t|
     t.integer "Follower_id", null: false
     t.integer "Followed_id", null: false
