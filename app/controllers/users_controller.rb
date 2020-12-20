@@ -14,8 +14,10 @@ class UsersController < ApplicationController
         render new
     end
     end
+
     def update
     end
+    
     def show
     end
     def user_params
