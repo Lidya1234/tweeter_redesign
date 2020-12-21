@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :followings
   resources :opinions
   resources  :sessions, only: [:create, :destroy]
-  root to: 'users#new'
+  root to: 'sessions#new'
 end

@@ -52,3 +52,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'hirb', '~> 0.7.3'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'better_errors', '~> 2.9', '>= 2.9.1'

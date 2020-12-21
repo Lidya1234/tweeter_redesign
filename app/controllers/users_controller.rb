@@ -7,12 +7,12 @@ class UsersController < ApplicationController
      @user = User.new
     end
     def create
-      @user =User.new(user_params)
+      @user = User.new(user_params)
       if @user.save  
         redirect_to new_user_path
-    else
-        render new
-    end
+      else
+        render root_path
+      end
     end
 
     def update
@@ -20,7 +20,12 @@ class UsersController < ApplicationController
     
     def show
     end
+    private
     def user_params
-        params.require[:user].permit[:username, :fullname, :Photo,:cover_image]
+        params.require(:user).permit(:Username, :Fullname, {Photo: []}, {Coverimage: []})
+        #params.require(:user).permit(:email, :first_name, :last_name, {Photo: []}, )
+        #params.require(:user).permit(:email, :first_name, :last_name, {avatars: []})
+
+
     end
 end
