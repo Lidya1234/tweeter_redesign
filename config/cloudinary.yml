@@ -1,12 +1,12 @@
 development:
-  cloud_name: CLOUD NAME
-  api_key: 'API KEY'
-  api_secret: API SECRET
+  cloud_name: lidu4394
+  api_key: 151591382922993
+  api_secret: ZS9wcQcm7ECS_GwkOiYZv213yvI
   enhance_image_tag: true
   static_file_support: false
 production:
-  cloud_name: CLOUD NAME
-  api_key: 'API KEY'
-  api_secret: API SECRET
+  cloud_name: lidu4394
+  api_key: 151591382922993
+  api_secret: ZS9wcQcm7ECS_GwkOiYZv213yvI
   enhance_image_tag: true
   static_file_support: true

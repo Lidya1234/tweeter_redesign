@@ -8,7 +8,7 @@ class User < ApplicationRecord
     has_many :authors, through: :opinions, dependent: :destroy
     validates :Username, presence: true
     validates :Fullname, presence: true
-    validates :Photo, presence: true
-    validates :Coverimage, presence: true
+    #validates :Photo, presence: true
+   # validates :Coverimage, presence: true
 
 end
