@@ -1,5 +1,5 @@
 <div class="d-flex">
-<%= form_for(:session, url: new_session_path) do |f| %>
+<%= form_for(:session, url: login_path) do |f| %>
   
    <%= f.label :Username %>
   <%= f.text_field :Username, class: 'form-control', placeholder: 'Enter user name' %>

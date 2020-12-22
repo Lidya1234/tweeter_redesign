@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     def create
       @user = User.new(user_params)
       if @user.save  
-        redirect_to new_user_path
+        redirect_to new_post_path
       else
         puts @user.errors.full_messages
         redirect_to root_path

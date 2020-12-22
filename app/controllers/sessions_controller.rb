@@ -1,13 +1,14 @@
 class SessionsController < ApplicationController
     def new; end
-   
+   def index
+  end
     def create
       # user=User.find_by(username: user_params[:username])
       @user = User.find_by(Username: params[:session][:Username])
       if @user
         session[:user_id] = @user.id
         flash[:notice] = "#{@user.Username} succesfully logged in"
-        redirect_to sessions_path
+        redirect_to new_post_path
       else
         flash.now.alert = 'Login failed'
         render :new

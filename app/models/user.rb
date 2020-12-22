@@ -4,11 +4,10 @@ class User < ApplicationRecord
     has_many :followings
     has_many :Followers, through: :followings, dependent: :destroy
     has_many :Followeds, through: :followings, dependent: :destroy
-    has_many :opinions
-    has_many :authors, through: :opinions, dependent: :destroy
-    validates :Username, presence: true
+    has_many :posts, dependent: :destroy
+   validates :Username, presence: true
     validates :Fullname, presence: true
-    #validates :Photo, presence: true
-   # validates :Coverimage, presence: true
+    validates :Photo, presence: true
+   validates :Coverimage, presence: true
 
 end
