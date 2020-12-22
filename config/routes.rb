@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :followings
   resources :opinions
-  resources  :sessions, only: [:create, :destroy]
+  resources  :sessions
   root to: 'users#new'
+  delete 'logout', to: 'sessions#destroy'
 end

@@ -1,6 +1,10 @@
-<%= form_for(:session, url: sessions_path) do |f| %>
-    Username: <%= f.text_field :username %> 
+<div class="d-flex">
+<%= form_for(:session, url: new_session_path) do |f| %>
   
-    <%= f.submit "Login" %>
+   <%= f.label :Username %>
+  <%= f.text_field :Username, class: 'form-control', placeholder: 'Enter user name' %>
+  <br>
+    <%= f.submit "Login", class: 'btn btn-primary'  %>
 
 <% end %>
+</div>

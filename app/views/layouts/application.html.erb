@@ -64,18 +64,23 @@
   
   <!-- Links -->
   <ul class="navbar-nav d-flex ">
+  	<% if !logged_in? %>
     <li class="nav-item ">
       <a class="nav-link mr-4" href="#"><i class="fas fa-pen"></i></a>
     </li>
     <li class="nav-item mr-4">
-      <a class="nav-link" href="#"><i class="fas fa-envelope"></i></a>
+    <%= link_to 'Log In' ,new_session_path, class: "nav-link" %>
     </li>
     <li class="nav-item ">
-      <a class="nav-link mr-4" href="#"><i class="fas fa-search"></i></a>
+    <%= link_to 'Sign_up' ,new_user_path, class: "nav-link " %>
+      
     </li>
-     <li class="nav-item">
-      <a class="nav-link" href="#"><i class="fas fa-cog"></i></i></a>
+    <% else %>
+        <li class="nav-item ">
+    <%= link_to 'Log out', logout_path, method: :delete, class: "nav-link" %>
+      
     </li>
+    <% end %>
   </ul>
   
 </nav>
