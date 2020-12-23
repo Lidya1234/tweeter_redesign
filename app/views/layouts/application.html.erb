@@ -24,11 +24,11 @@
   </div>
   <div class="d-flex justify-content-between ">
   <div class="text-center text-white">
-  <p class="m-auto">184</p>
+  <p class="m-auto"><%= current_user.followers.count%></p>
   <h6>Followers</h6>
   </div>
   <div class="text-center text-white">
-  <p class="m-auto">285</p>
+  <p class="m-auto"><%= current_user.followed_users.count%></p>
   <h6>Following</h6>
   </div>
   </div>
