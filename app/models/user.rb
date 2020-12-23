@@ -3,6 +3,9 @@ class User < ApplicationRecord
     mount_uploader :Coverimage, ImageUploader
     has_many :followships, foreign_key: "follower_id", dependent: :destroy
     has_many :followed_users, through: :followships, source: :followed
+    has_many  :inverse_followships, foreign_key: "followed_id", class_name: "Followship", dependent: :destroy
+    has_many :followers, through: :inverse_followships, source: :follower
+
     has_many :posts, dependent: :destroy
    validates :Username, presence: true, uniqueness: true
     validates :Fullname, presence: true
@@ -11,13 +14,13 @@ class User < ApplicationRecord
 
 
    def following?(user)
-    followships.find_by_followed_id(user.id)
+    followships.find_by_followed_id(user.ids)
    end
    def follow(user)
     followships.create!(followed_id: user.id)
    end
    
-   def following?(user)
+   def unfollow(user)
     followships.find_by_followed_id(user.id).destroy
    end
 end

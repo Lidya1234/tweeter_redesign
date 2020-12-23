@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     if @posts.save
         redirect_to posts_path
     else
-        render 'new'
+        render :index
     end
     end
     def show
