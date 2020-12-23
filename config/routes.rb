@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :followings
   resources :posts
   resources  :sessions
-  root to: 'users#new'
+  root to: 'users#index'
   delete 'logout', to: 'sessions#destroy'
   post 'login', to: 'sessions#create'
   get 'login', to: 'sessions#create'

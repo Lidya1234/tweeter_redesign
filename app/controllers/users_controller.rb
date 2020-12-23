@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
     #before_action :require_login
     def index
-        @user=User.all
+      @users = User.all
     end
+
     def new
      @user = User.new
     end
     def create
       @user = User.new(user_params)
       if @user.save  
-        redirect_to new_post_path
+        session[:user_id] = @user.id
+        redirect_to users_path
       else
         puts @user.errors.full_messages
         redirect_to root_path
@@ -20,6 +22,10 @@ class UsersController < ApplicationController
     end
     
     def show
+
+      @user =User.find(params[:id])
+      @posts = @user.posts.ordered_by_most_recent
+    
     end
     private
     def user_params
