@@ -14,8 +14,11 @@ class User < ApplicationRecord
 
 
    def following?(user)
-    followships.find_by_followed_id(user.ids)
+    followships.find_by_followed_id(user.id)
    end
+#    def following_single?(user)
+#     followships.find_by_followed_id(user.id)
+#    end
    def follow(user)
     followships.create!(followed_id: user.id)
    end

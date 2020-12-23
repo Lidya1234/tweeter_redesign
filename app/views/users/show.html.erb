@@ -1,3 +1,6 @@
 <%= @user.Username%>
 <img src="<%= @user.Coverimage %>" >
+<%= @user.followers.count%>
+<%= @user.followed_users.count%>
+<%= render 'following_form'%>
 <%= render @posts%>
