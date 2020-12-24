@@ -6,24 +6,24 @@ class User < ApplicationRecord
     has_many  :inverse_followships, foreign_key: "followed_id", class_name: "Followship", dependent: :destroy
     has_many :followers, through: :inverse_followships, source: :follower
 
+
+ 
+
     has_many :posts, dependent: :destroy
    validates :Username, presence: true, uniqueness: true
     validates :Fullname, presence: true
     validates :Photo, presence: true
    validates :Coverimage, presence: true
 
-
-   def following?(user)
-    followships.find_by_followed_id(user.id)
-   end
-#    def following_single?(user)
-#     followships.find_by_followed_id(user.id)
-#    end
    def follow(user)
-    followships.create!(followed_id: user.id)
-   end
-   
-   def unfollow(user)
-    followships.find_by_followed_id(user.id).destroy
-   end
+      followships.create!(followed_id: user.id)
+    end
+  
+    def unfollow(user)
+      followships.find_by(followed_id: user.id).destroy
+    end
+  
+    def following?(user)
+      followed_users.include?(user)
+    end
 end

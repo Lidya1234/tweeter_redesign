@@ -38,9 +38,12 @@
 
   <!-- Links -->
   <ul class="navbar-nav ">
+  <% if logged_in?%>
     <li class="nav-item ">
-      <a class="nav-link text-light" href="#"><i class="fas fa-home"></i>  Home</a>
+      
+   <i class="fas fa-home"></i> <%= link_to ' Home' ,users_path, class: "nav-link text-light" %>
     </li>
+    <% end %>
     <li class="nav-item">
       <a class="nav-link text-light" href="#"><i class="fas fa-hashtag"></i>  Discover</a>
     </li>
