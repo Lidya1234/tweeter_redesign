@@ -1,10 +1,23 @@
 
-<section class="users-section">
+<section class="users-section d-flex">
+<div class="col-9">
+<p>This is index page</p>
+</div>
+<div class="col-3">
   <ul class="users-list">
-    <%= render @user %>
-    <div class="d-flex">
 
+   <% User.who_to_follow(current_user.id).each do |u|%>
+   <% unless u ==current_user %>
+  
+       <li>
+  <img src="<%=u.Photo%>"/> <%= u.Username %>
+   <%= link_to 'Follow',  user_path(u), class: 'nav-link' %>
+ 
+   <% end %>
+   <br>
+   <% end %>
   </ul>
+  </div>
 </section>
 
     

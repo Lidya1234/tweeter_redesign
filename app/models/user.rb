@@ -5,16 +5,31 @@ class User < ApplicationRecord
     has_many :followed_users, through: :followships, source: :followed
     has_many  :inverse_followships, foreign_key: "followed_id", class_name: "Followship", dependent: :destroy
     has_many :followers, through: :inverse_followships, source: :follower
-
-
- 
-
     has_many :posts, dependent: :destroy
    validates :Username, presence: true, uniqueness: true
     validates :Fullname, presence: true
     validates :Photo, presence: true
    validates :Coverimage, presence: true
+   
+   scope :who_to_follow, -> (user_id) {
+      where(
+        "id NOT IN ( SELECT followed_id 
+                 FROM followships
+                 WHERE follower_id = ?
+               )",
+        user_id
+      )
+    }
 
+    scope :followed_by, -> (user_id) {
+      where(
+        "id IN ( SELECT followed_id 
+                 FROM followships
+                 WHERE follower_id = ?
+               )",
+        user_id
+      )
+    }
    def follow(user)
       followships.create!(followed_id: user.id)
     end

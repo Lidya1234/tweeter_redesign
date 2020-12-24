@@ -15,7 +15,7 @@ class FollowshipsController < ApplicationController
     def destroy
         @user = Followship.find(params[:id]).followed
         current_user.unfollow(@user)
-        redirect_to @user
+        redirect_to users_path
     end
 
  

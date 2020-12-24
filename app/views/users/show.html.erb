@@ -1,6 +1,61 @@
-<%= @user.Username%>
-<img src="<%= @user.Coverimage %>" >
-<%= @user.followers.count%>
-<%= @user.followed_users.count%>
-<%= render 'following_form'%>
+<div class="d-flex">
+<section class="col-9">
+<img src="<%= @user.Coverimage %>" class="cover_image" >
+  <!--main content-->
+<div class="main-content">
+ <nav class="navbar navbar-expand-lg bg-light navbar-light d-flex justify-content-between">
+
+  
+  
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+     
+      <%= link_to 'Tweets', posts_path, class: 'nav-link'%>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Photos</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">videos</a>
+    </li>
+  
+  </ul>
+  
+  
+  
+</nav>
+<%= render'posts/post_form'%>
+<ul class="list-group">
 <%= render @posts%>
+</ul>
+</section>
+<section class="col-3 right-section">
+
+<img src="<%= @user.Photo %>" class='profile_img'>
+<br>
+<div class="profile_name"><%= @user.Username %></div>
+<div class="d-flex follow">
+<%= @user.followers.count%> <h6 class="mr-4">Follwers</h6>
+<%= @user.followed_users.count%><h6>Following</h6>
+</div>
+<div class="profile_name"><%= render 'single_following'%></div>
+
+   <h6 class='text-gray'>Followed_by</h6>
+    
+  <% User.followed_by(current_user.id).each do |u|%>
+   <% unless u ==current_user %>
+  
+       <li>
+  <img src="<%=u.Photo%>"/> <%= u.Username %>
+   <%= link_to 'Follow',  user_path(u), class: 'nav-link' %>
+ 
+   <% end %>
+   <br>
+   <% end %>
+   
+  
+</section>
+
+

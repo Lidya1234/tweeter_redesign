@@ -5,7 +5,15 @@
   <span >
     <%= link_to 'See Profile',  user_path(user), class: 'nav-link' %>
     <br>
- <%= render 'following_form'%>
+ <% unless  user == current_user%>
+
+<% if current_user.following?(user) %>
+<%= render "unfollow"%>
+<% else %>
+<%= render "follow"%>
+<% end %>
+<% end %>
+
   </span>
 </li>
 
