@@ -2,7 +2,7 @@ class PostsController < ApplicationController
     def index
         @posts = Post.new
         tweets
-        all_posts
+        
     end
     def new
   
@@ -19,14 +19,14 @@ class PostsController < ApplicationController
     def update
         @post =Post.find(params[:id])
         @post.update(text: params[:post][:text])
-        redirect_to  users_path
+        redirect_to  @post
 
     end
     def edit
     @post = Post.find(params[:id])
     end
     def show
-        
+      all_posts  
     end
     def destroy
     end

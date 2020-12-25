@@ -23,9 +23,9 @@ class User < ApplicationRecord
 
     scope :followed_by, -> (user_id) {
       where(
-        "id IN ( SELECT followed_id 
+        "id IN ( SELECT follower_id 
                  FROM followships
-                 WHERE follower_id = ?
+                 WHERE followed_id = ?
                )",
         user_id
       )
