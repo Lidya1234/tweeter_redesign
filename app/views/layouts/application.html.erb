@@ -20,7 +20,11 @@
   <div class="d-flex">
   
   <div class="left col-2 bg-dark">
+  <% if !logged_in? %>
+ <p class="text-white pt-4"><i class="fab fa-twitter 2X"></i> TWITTER APP </p>>
+    <% end %>
   <% if logged_in? %>
+  
   <div class="d-flex justify-content-around">
 
    <img src="<%=current_user.Photo%>" class="profile_photo"/>

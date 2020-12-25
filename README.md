@@ -1,5 +1,5 @@
 ## Tweeter re-design
-This project is a tweeter redesign with two main paged the home page and user page.User can follow ,unfollw and see other users profiles.A user can create a post and can edit a post.
+This project is a tweeter redesign with two main paged the home page and user page.User can follow ,unfollow and see other users profiles.A user can create a post and can edit a post.
 <img src="app\assets\images\sign_up.PNG">
 <img src="app\assets\images\userpage.PNG">
 
@@ -44,7 +44,7 @@ To get this project up and running locally, you must already have ruby and neces
 7. Run ```rails s``` to run the server
 8. Write localhost:3000 on your browser
 9. The server will run
-
+[live version](https://my-tweeter-redesign.herokuapp.com/)
 
 ## Author Details::
 
