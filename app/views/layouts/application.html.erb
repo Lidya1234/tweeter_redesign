@@ -18,7 +18,7 @@
   <div class="left col-2 bg-dark">
   <div class="d-flex justify-content-around">
  <% if logged_in?%>
-   <img src="<%=current_user.Photo%>"/>
+   <img src="<%=current_user.Photo%>" class="profile_photo"/>
 <p class="text-white"><%= current_user.Username%></p>
 <% end %>
   </div>
@@ -101,7 +101,9 @@
   </div>
   </div>
   </div>
-  
+  <footer class="footer">
+  <p>This is footer</p>
+  </footer>
   
     
   </body>
