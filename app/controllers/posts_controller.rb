@@ -16,6 +16,15 @@ class PostsController < ApplicationController
         render :index
     end
     end
+    def update
+        @post =Post.find(params[:id])
+        @post.update(text: params[:post][:text])
+        redirect_to  users_path
+
+    end
+    def edit
+    @post = Post.find(params[:id])
+    end
     def show
         
     end
