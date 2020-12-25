@@ -1,5 +1,5 @@
 class FollowshipsController < ApplicationController
-    before_action :require_login
+    #before_action :require_login
     def new
         @followships=Followship.new
     end

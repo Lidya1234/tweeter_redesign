@@ -18,14 +18,16 @@
 			<div><%= message %></div>
 	<% end %>
   <div class="d-flex">
+  
   <div class="left col-2 bg-dark">
+  <% if logged_in? %>
   <div class="d-flex justify-content-around">
- <% if logged_in?%>
+
    <img src="<%=current_user.Photo%>" class="profile_photo"/>
 <p class="text-white"><%= current_user.Username%></p>
-<% end %>
+
   </div>
-  	<% if logged_in? %>
+  	
   <div class="d-flex justify-content-between ">
   <div class="text-center text-white">
   <p class="m-auto"><%= current_user.followers.count%></p>
@@ -36,43 +38,51 @@
   <h6>Following</h6>
   </div>
   </div>
-  <% end %>
+  
   <nav class="navbar ">
 
   <!-- Links -->
   <ul class="navbar-nav ">
-  <% if logged_in?%>
+
     <li class="nav-item ">
           <%= link_to users_path, class: "nav-link text-light" do %>
            <i class="fas fa-home"></i> Home
            <% end %>
-   <% end %>
+   
     </li>
     
     <li class="nav-item">
-      <a class="nav-link text-light" href="#"><i class="fas fa-hashtag"></i>  Discover</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-light" href="#"><i class="fas fa-link"></i>  Connect</a>
+      
+        <%= link_to users_path, class: "nav-link text-light" do %>
+           <i class="fas fas fa-link"></i> Connect
+           <% end %>
     </li>
       <li class="nav-item">
       
-      <% if logged_in? %>
+      
             
             
             <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
            <i class="fas fa-user-alt"></i> Profile
            <% end %>
-<% end %>
+
     </li>
-    <li class="nav-item">
-      <a class="nav-link text-light" href="#"><i class="fas fa-clock"></i>  Statistics</a>
+      <li class="nav-item ">
+          <%= link_to posts_path, class: "nav-link text-light" do %>
+           <i class="fas fa-hashtag"></i> Discover
+           <% end %>
+    </li>
+    
+     <li class="nav-item ">
+          <%= link_to posts_path, class: "nav-link text-light" do %>
+           <i class="fas fa-clock"></i> Statistics
+           <% end %>
     </li>
   </ul>
 
 </nav>
 
-
+<% end %>
   </div>
 <div class="main_page col-10">
   
