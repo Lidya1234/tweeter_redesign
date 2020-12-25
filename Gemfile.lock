@@ -262,7 +262,7 @@ DEPENDENCIES
   hirb (~> 0.7.3)
   jbuilder (~> 2.7)
   pg (>= 0.18, < 2.0)
-  puma (~> 4.1)
+  puma
   rails (~> 6.0.3, >= 6.0.3.4)
   rspec-rails
   sass-rails (>= 6)

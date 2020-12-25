@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
     end
   end
   describe 'relations' do
-  it { should respond_to(:followships) }
-  it { should respond_to(:followed_users) }
+    it { should respond_to(:followships) }
+    it { should respond_to(:followed_users) }
   end
 end
