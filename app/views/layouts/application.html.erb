@@ -14,6 +14,9 @@
   </head>
 
   <body>
+    <% flash.each do |type, message| %>
+			<div><%= message %></div>
+	<% end %>
   <div class="d-flex">
   <div class="left col-2 bg-dark">
   <div class="d-flex justify-content-around">

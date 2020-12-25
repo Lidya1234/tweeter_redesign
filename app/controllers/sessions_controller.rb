@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       if @user
         session[:user_id] = @user.id
         flash[:notice] = "#{@user.Username} succesfully logged in"
-        redirect_to posts_path
+        redirect_to users_path
       else
         flash.now.alert = 'Login failed'
         render :new
