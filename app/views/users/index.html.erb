@@ -1,7 +1,36 @@
+  <!-- Links -->
+   <nav class="navbar navbar-expand-lg bg-light navbar-light d-flex justify-content-between">
 
+  <ul class="navbar-nav">
+    <li class="nav-item">
+     
+      <%= link_to 'Tweets', user_path(@user.ids), class: 'nav-link'%>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Photos</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">videos</a>
+    </li>
+  
+  </ul>
+  <ul class="navbar-nav">
+  <li class="nav-item">
+  <a href="#" class="nav-link">Who to follow </a>
+  </li>
+    <li class="nav-item">
+  <a href="#" class="nav-link"><i class="fas fa-reload"></i></a>
+  </li>
+  
+  </ul>
+  
+  
+  
+</nav>
 <section class="users-section d-flex">
 <div class="col-9">
-<p>This is index page</p>
+<%= render'posts/post_form'%>
+
 </div>
 <div class="col-3">
   <ul class="users-list">
@@ -10,7 +39,7 @@
    <% unless u ==current_user %>
   
        <li>
-  <img src="<%=u.Photo%>"/> <%= u.Username %>
+  <img src="<%=u.Photo%>" class="profile_photo"/> <%= u.Username %>
    <%= link_to 'Follow',  user_path(u), class: 'nav-link' %>
  
    <% end %>

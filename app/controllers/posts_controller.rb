@@ -2,6 +2,7 @@ class PostsController < ApplicationController
     def index
         @posts = Post.new
         tweets
+        all_posts
     end
     def new
   
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
     @posts = current_user.posts.new(post_params)
         
     if @posts.save
-        redirect_to posts_path
+        redirect_to user_path(@posts.user_id), notice: 'Post was successfully created.'
     else
         render :index
     end
@@ -20,11 +21,15 @@ class PostsController < ApplicationController
     end
     def destroy
     end
-
+    def tweets
+        @tweets ||= Post.all.ordered_by_most_recent.includes(:user)
+     end
+     def all_posts
+        @all_posts ||= Post.all.ordered_by_most_recent
+     end
+private
     def post_params
         params.require(:post).permit(:text)
     end
-    def tweets
-       @tweets ||= Post.all.ordered_by_most_recent.includes(:user)
-    end
+  
 end

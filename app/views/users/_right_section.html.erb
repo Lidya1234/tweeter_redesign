@@ -1,0 +1,27 @@
+<section class="col-3 right-section list-group">
+
+<img src="<%= @user.Photo %>" class='profile_img list-group-item list-group-item-action'>
+<br>
+<div class="profile_name  list-group-item list-group-item-action"><%= @user.Username %></div>
+<div class="d-flex follow  list-group-item list-group-item-action">
+<%= @user.followers.count%> <h6 class="mr-4">Follwers</h6>
+<%= @user.followed_users.count%><h6>Following</h6>
+</div>
+<div class="profile_name  list-group-item list-group-item-action"><%= render 'single_following'%></div>
+
+   <h6 class='text-gray  list-group-item list-group-item-action'>Followed_by</h6>
+    
+  <% User.followed_by(current_user.id).each do |u|%>
+   <% unless u ==current_user %>
+  
+       <li>
+  <img src="<%=u.Photo%>"/> <%= u.Username %>
+   <%= link_to 'Follow',  user_path(u), class: 'nav-link' %>
+ 
+   <% end %>
+   <br>
+   <% end %>
+   
+  
+</section>
+

@@ -40,10 +40,12 @@
   <ul class="navbar-nav ">
   <% if logged_in?%>
     <li class="nav-item ">
-      
-   <i class="fas fa-home"></i> <%= link_to ' Home' ,users_path, class: "nav-link text-light" %>
+          <%= link_to users_path, class: "nav-link text-light" do %>
+           <i class="fas fa-home"></i> Home
+           <% end %>
+   <% end %>
     </li>
-    <% end %>
+    
     <li class="nav-item">
       <a class="nav-link text-light" href="#"><i class="fas fa-hashtag"></i>  Discover</a>
     </li>
@@ -51,7 +53,14 @@
       <a class="nav-link text-light" href="#"><i class="fas fa-link"></i>  Connect</a>
     </li>
       <li class="nav-item">
-      <a class="nav-link text-light" href="#"><i class="fas fa-user-alt"></i>  Profile</a>
+      
+      <% if logged_in? %>
+            
+            
+            <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
+           <i class="fas fa-user-alt"></i> Profile
+           <% end %>
+<% end %>
     </li>
     <li class="nav-item">
       <a class="nav-link text-light" href="#"><i class="fas fa-clock"></i>  Statistics</a>
@@ -83,6 +92,11 @@
       
     </li>
     <% else %>
+   <li class="nav-item ">
+   <a href="#" class="nav-link"> 
+   <%= current_user.Username%>
+   </a>
+   </li>
         <li class="nav-item ">
     <%= link_to 'Log out', logout_path, method: :delete, class: "nav-link" %>
       
@@ -101,8 +115,8 @@
   </div>
   </div>
   </div>
-  <footer class="footer">
-  <p>This is footer</p>
+  <footer class="footer bg-dark">
+  <p class="text-light text-center">Copy Right 2020 @All Rights Reserved</p>
   </footer>
   
     
