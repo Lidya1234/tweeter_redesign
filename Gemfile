@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+   gem "database_cleaner"
+  gem "rspec-rails"
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
@@ -44,6 +46,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
