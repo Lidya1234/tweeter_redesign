@@ -1,7 +1,8 @@
 ## Tweeter re-design
 This project is a tweeter redesign with two main paged the home page and user page.User can follow ,unfollw and see other users profiles.A user can create a post and can edit a post.
-<img src="app/assets/images/sign_up.png">
-<img src="app/assets/images/userpage.png">
+<img src="app\assets\images\sign_up.PNG">
+<img src="app\assets\images\userpage.PNG">
+
 
 ## Application Functionality
 - User can sign up ,login and logout.
