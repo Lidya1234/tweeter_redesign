@@ -53,6 +53,6 @@ end
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'factory_bot'
 gem 'hirb', '~> 0.7.3'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'factory_bot'
