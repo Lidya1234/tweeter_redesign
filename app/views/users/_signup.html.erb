@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center mt-4 ">
-<%= form_for(@user, :html => {:multipart => true}) do |f| %>
+<%= form_for(@user, :html => {:multipart => true}, validate: true) do |f| %>
   <%= f.label :Username %>
   <%= f.text_field :Username, class: 'form-control', placeholder: 'Enter user name' %>
     <%= f.label :Fullname %>

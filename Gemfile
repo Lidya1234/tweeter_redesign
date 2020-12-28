@@ -56,3 +56,7 @@ gem 'cloudinary'
 gem 'factory_bot'
 gem 'hirb', '~> 0.7.3'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'simple_form'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
+gem 'jquery-rails', '~> 4.4'

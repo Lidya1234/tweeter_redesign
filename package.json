@@ -2,6 +2,7 @@
   "name": "tweeter_redesign",
   "private": true,
   "dependencies": {
+    "@client-side-validations/client-side-validations": "^0.1.5",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
