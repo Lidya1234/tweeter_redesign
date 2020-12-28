@@ -57,7 +57,7 @@
 
    <h6 class='text-gray  list-group-item list-group-item-action'>Followed_by</h6>
     
-  <% User.followed_by(current_user.id).each do |u|%>
+  <% User.followed_by(@user.id).each do |u|%>
    <% unless u ==current_user %>
   
  
