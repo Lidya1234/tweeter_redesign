@@ -45,7 +45,7 @@ To get this project up and running locally, you must already have ruby and neces
 8. Write localhost:3000 on your browser
 9. The server will run
 
-
+## Live Demo
 [live version](https://my-tweeter-redesign.herokuapp.com/)
 
 ## Author Details::
@@ -59,6 +59,7 @@ To get this project up and running locally, you must already have ruby and neces
 
 
 ## Acknowledgment
+- Gregoire Vella on Behance(design author)
 The resources we have used to develop our project:
 
 - [Odin-project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/sessions-cookies-and-authentication)
