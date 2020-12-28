@@ -60,13 +60,16 @@
   <% User.followed_by(current_user.id).each do |u|%>
    <% unless u ==current_user %>
   
-       <li>
-  <img src="<%=u.Photo%>" class="profile_photo"/> <%= u.Username %>
-   <%= link_to 'See Profile',  user_path(u), class: 'nav-link' %>
  
+   <li class="nav-link text-dark">
+    <%= link_to user_path(u), class: "nav-link text-dark" do %>
+          
+  <img src="<%=u.Photo%>" class="profile_photo"/> <%= u.Username %>
+  <% end %>
+  </li>
+  <br>
    <% end %>
-   <br>
-   <% end %>
+           <% end %>
    
   
 </section>
