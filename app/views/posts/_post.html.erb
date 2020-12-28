@@ -5,7 +5,9 @@
 <h6><%= post.user.Username%></h6>
 
 <%= post.text%>
+<% if current_user.id == post.user.id %>
 <%= link_to "Edit" ,edit_post_path(post.id) , class: 'nav_link'%>
+<% end %>
 </div>
 </div>
 
