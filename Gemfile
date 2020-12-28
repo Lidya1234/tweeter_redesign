@@ -55,3 +55,4 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'hirb', '~> 0.7.3'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'factory_bot'
