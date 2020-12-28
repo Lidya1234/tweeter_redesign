@@ -22,7 +22,7 @@ This project is a tweeter redesign with two main paged the home page and user pa
 ### Prerequisites
 - Ruby -v  2.7.2
 - Rails -v 6.0.3.4
-- SQLite3
+- Pgsql
 - VScode
 - cloudinary gem
 - carrier_wave gem
@@ -44,6 +44,8 @@ To get this project up and running locally, you must already have ruby and neces
 7. Run ```rails s``` to run the server
 8. Write localhost:3000 on your browser
 9. The server will run
+
+
 [live version](https://my-tweeter-redesign.herokuapp.com/)
 
 ## Author Details::

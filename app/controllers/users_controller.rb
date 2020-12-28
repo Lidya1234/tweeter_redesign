@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :require_login, only: %i[index show]
   def index
     @user = User.all
+    @user = @user.includes(:posts)
   end
 
   def new

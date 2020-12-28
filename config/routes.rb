@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :followships
   resources :posts
-  resources  :sessions
+  resources  :sessions, only: [:index, :new]
   root to: 'sessions#new'
   delete 'logout', to: 'sessions#destroy'
   post 'login', to: 'sessions#create'

@@ -1,5 +1,4 @@
 class FollowshipsController < ApplicationController
-  # before_action :require_login
   def new
     @followships = Followship.new
   end
@@ -20,4 +19,3 @@ class FollowshipsController < ApplicationController
     redirect_to users_path
   end
 end
-# @current_user.followed_users.find_by(followee_id: @user.id).destroy
