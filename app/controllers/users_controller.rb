@@ -16,7 +16,8 @@ class UsersController < ApplicationController
       redirect_to users_path
     else
       puts @user.errors.full_messages
-      redirect_to root_path
+      flash[:notice] = 'Signup failed'
+      redirect_to new_user_path
     end
   end
 

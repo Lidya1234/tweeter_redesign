@@ -52,11 +52,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'carrierwave'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 gem 'cloudinary'
 gem 'factory_bot'
 gem 'hirb', '~> 0.7.3'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'simple_form'
-gem 'client_side_validations'
-gem 'client_side_validations-simple_form'
 gem 'jquery-rails', '~> 4.4'
+gem 'simple_form'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
