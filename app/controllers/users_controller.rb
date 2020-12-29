@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def index
     @user = User.all
     @user = @user.includes(:posts)
+    @who_to_follow = User.who_to_follow(current_user.id)
   end
 
   def new
