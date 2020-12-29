@@ -13,14 +13,14 @@ class PostsController < ApplicationController
     if @posts.save
       redirect_to user_path(@posts.user_id), notice: 'Post was successfully created.'
     else
-      render :index
+      render :index, notice: 'Post field is blank.'
     end
   end
 
   def update
     @post = Post.find(params[:id])
     @post.update(text: params[:post][:text])
-    redirect_to @post
+    redirect_to @post, notice: 'Post was successfully edited.'
   end
 
   def edit

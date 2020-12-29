@@ -10,7 +10,7 @@ class FollowshipsController < ApplicationController
   def create
     @user = User.find(params[:followship][:followed_id])
     current_user.follow(@user)
-    redirect_to users_path
+    redirect_to user_path(@user.id)
   end
 
   def destroy
