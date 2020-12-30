@@ -55,8 +55,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 gem 'carrierwave'
-gem 'client_side_validations'
-gem 'client_side_validations-simple_form'
+
 gem 'cloudinary'
 
 gem 'faker'
