@@ -1,5 +1,5 @@
 FactoryBot.define do
-  Full-name = 'lidya gher'.freeze
+ # Full-name = 'lidya gher'.freeze
   factory :user do
     Username { Faker::Internet.username[1..20] }
     Fullname { Faker::Name.name[1..20] }
