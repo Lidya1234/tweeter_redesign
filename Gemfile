@@ -33,6 +33,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'rspec-rails'
+   gem "factory_bot_rails"
+
 end
 
 group :development do
@@ -47,6 +49,9 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'shoulda-matchers'
   gem 'webdrivers'
+  gem 'rails-controller-testing'
+  gem 'launchy'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -55,8 +60,9 @@ gem 'carrierwave'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'cloudinary'
-gem 'factory_bot'
+
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails', '~> 4.4'
 gem 'simple_form'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'faker'
