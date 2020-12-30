@@ -5,11 +5,10 @@
 
 require("@rails/ujs").start()
 require("turbolinks").start()
-require('@client-side-validations/client-side-validations')
+
 require("@rails/activestorage").start()
 require("channels")
-//= require jquery
-//= require rails.validations
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
