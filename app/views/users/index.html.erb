@@ -35,17 +35,8 @@
 <div class="col-3">
   <ul class="users-list">
 
-   <% User.who_to_follow(current_user.id).each do |u|%>
-   <% unless u ==current_user %>
-    <li class="nav-link text-dark">
-    <%= link_to user_path(u), class: "nav-link text-dark" do %>
-          
-  <img src="<%=u.Photo%>" class="profile_photo"/> <%= u.Username %>
-  <% end %>
-  </li>
- 
- 
-   <% end %>
+  <% User.who_to_follow(current_user.id).each do |u|%>
+  <%= who_to_follow?(u) %>
    <br>
    <% end %>
   </ul>

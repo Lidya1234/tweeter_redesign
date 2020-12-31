@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_152612) do
+ActiveRecord::Schema.define(version: 2020_12_23_123428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 2020_12_28_152612) do
     t.index ["followed_id"], name: "index_followships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_followships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_followships_on_follower_id"
-  end
-
-  create_table "opinions", force: :cascade do |t|
-    t.integer "Author_id", null: false
-    t.text "Text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["Author_id"], name: "index_opinions_on_Author_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -50,6 +42,5 @@ ActiveRecord::Schema.define(version: 2020_12_28_152612) do
     t.string "Coverimage"
   end
 
-  add_foreign_key "opinions", "users", column: "Author_id"
   add_foreign_key "posts", "users"
 end

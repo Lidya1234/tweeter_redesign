@@ -13,7 +13,8 @@ class PostsController < ApplicationController
     if @posts.save
       redirect_to user_path(@posts.user_id), notice: 'Post was successfully created.'
     else
-      render :index, notice: 'Post field is blank.'
+      flash[:notice] = 'Post field is blank.'
+      redirect_to user_path(@posts.user_id)
     end
   end
 

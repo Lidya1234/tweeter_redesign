@@ -61,5 +61,5 @@ gem 'cloudinary'
 gem 'faker'
 gem 'hirb', '~> 0.7.3'
 gem 'jquery-rails', '~> 4.4'
-gem 'simple_form'
+
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
