@@ -1,0 +1,10 @@
+<div class="d-flex ml-4 form">
+<%= form_for(:session, url: login_path) do |f| %>
+  
+   <%= f.label :Username %>
+  <%= f.text_field :Username, class: 'form-control', placeholder: 'Enter user name' %>
+  <br>
+    <%= f.submit "Login", class: 'btn btn-primary'  %>
+
+<% end %>
+</div>

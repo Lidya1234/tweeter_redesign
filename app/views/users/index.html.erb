@@ -1,0 +1,47 @@
+  <!-- Links -->
+   <nav class="navbar navbar-expand-lg bg-light navbar-light d-flex justify-content-between">
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+     
+      <%= link_to 'Tweets', posts_path, class: 'nav-link'%>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Photos</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">videos</a>
+    </li>
+  
+  </ul>
+  <ul class="navbar-nav">
+  <li class="nav-item">
+  <a href="#" class="nav-link">Who to follow </a>
+  </li>
+    <li class="nav-item">
+  <a href="#" class="nav-link"><i class="fas fa-reload"></i></a>
+  </li>
+  
+  </ul>
+  
+  
+  
+</nav>
+<section class="users-section d-flex">
+<div class="col-9">
+<%= render'posts/post_form'%>
+  
+</div>
+<div class="col-3">
+  <ul class="users-list">
+
+  <% User.who_to_follow(current_user.id).each do |u|%>
+  <%= who_to_follow?(u) %>
+   <br>
+   <% end %>
+  </ul>
+  </div>
+</section>
+
+    
+   

@@ -7,9 +7,48 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script
+  src="https://kit.fontawesome.com/16d2250538.js"
+  crossorigin="anonymous"
+></script>
   </head>
 
   <body>
-    <%= yield %>
+    <% flash.each do |type, message| %>
+			<div><%= message %></div>
+	<% end %>
+  <div class="d-flex">
+  
+  <div class="left col-2 bg-dark">
+  <%= left_logged_in? %>
+  </div>
+<div class="main_page col-10">
+  
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark d-flex justify-content-between">
+  <!-- Brand/logo -->
+  
+  <a class="navbar-brand" href="#"><i class="fab fa-twitter"></i></a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav d-flex ">
+  <%= nav_logged_in? %>
+  </ul>
+  
+</nav>
+
+
+ <div class="content ">
+
+  <%= yield %>
+  </div>
+
+  </div>
+  </div>
+  </div>
+  <footer class="footer bg-dark">
+  <p class="text-light text-center">Copy Right 2020 @All Rights Reserved</p>
+  </footer>
+  
+    
   </body>
 </html>
